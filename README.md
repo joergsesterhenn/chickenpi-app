@@ -13,4 +13,4 @@ This repository holds the frontend to the chickenpi coop management.
 
 
 # Architecture of chickenpi
-<img alt="architecture" src="https://github.com/joergsesterhenn/chickenpi/blob/docs/chickenpi.png" height="400">
+<img alt="architecture" src="https://github.com/joergsesterhenn/chickenpi/blob/master/chickenpi_architecture.png" height="400">
