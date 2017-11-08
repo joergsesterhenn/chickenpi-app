@@ -1,8 +1,8 @@
-<img style="float: right;" alt="chickenpi logo" src="https://github.com/joergsesterhenn/chickenpi/raw/master/chickenpi.png" height="200">
+<img align="right" alt="chickenpi logo" src="https://github.com/joergsesterhenn/chickenpi/raw/master/chickenpi.png" height="200">
 
-# chickenpi-app [![Build Status](https://travis-ci.org/joergsesterhenn/chickenpi-app.svg?branch=master)](https://travis-ci.org/joergsesterhenn/chickenpi-app) <a href="https://sonarcloud.io/dashboard?id=de.chickenpi:chickenpi-app"><img alt="quality gate status" src="https://sonarcloud.io/api/badges/gate?key=de.chickenpi:chickenpi-app"/></a> <a href="https://david-dm.org/joergsesterhenn/chickenpi-app"> <img alt="dependencies up to date status" src="https://david-dm.org/joergsesterhenn/chickenpi-app.svg"/></a>
+# [chickenpi-app](https://chickenpi-server.firebaseapp.com/) [![Build Status](https://travis-ci.org/joergsesterhenn/chickenpi-app.svg?branch=master)](https://travis-ci.org/joergsesterhenn/chickenpi-app) <a href="https://sonarcloud.io/dashboard?id=de.chickenpi:chickenpi-app"><img alt="quality gate status" src="https://sonarcloud.io/api/badges/gate?key=de.chickenpi:chickenpi-app"/></a> <a href="https://david-dm.org/joergsesterhenn/chickenpi-app"> <img title="dependencies status" src="https://david-dm.org/joergsesterhenn/chickenpi-app/status.svg"/></a><a href="https://david-dm.org/joergsesterhenn/chickenpi-app?type=dev" title="devDependencies status"><img src="https://david-dm.org/joergsesterhenn/chickenpi-app/dev-status.svg"/></a>
 Chickenpi is a node.js/raspberry pi chicken coop management solution - currently in inception phase.
-This repository holds the frontend to the chickenpi coop management. 
+This repository holds the frontend to the chickenpi coop management.
 
 ## Components
 * [angular](https://angular.io)
@@ -13,4 +13,9 @@ This repository holds the frontend to the chickenpi coop management.
 
 
 # Architecture of chickenpi
+
+* [chickenpi overview](https://github.com/joergsesterhenn/chickenpi)
+* [chickenpi-client](https://github.com/joergsesterhenn/chickenpi-client)
+
+
 <img alt="architecture" src="https://github.com/joergsesterhenn/chickenpi/blob/master/chickenpi_architecture.png" height="400">
