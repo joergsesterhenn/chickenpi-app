@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'JavaSampleApproach';
-  description = 'Angular4-Firebase Demo';
+  title = 'Chickenpi App';
+  description = 'Frontend to chickenpi coop management.';
 }

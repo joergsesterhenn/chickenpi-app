@@ -2,7 +2,7 @@
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
 module.exports = function (config) {
-  config.set({
+  var options ={
     basePath: '',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
@@ -15,7 +15,7 @@ module.exports = function (config) {
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
+     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
@@ -29,5 +29,23 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false
-  });
+  }
+
+  if (process.env.TRAVIS) {
+    options.customLaunchers = {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    };
+    options.browsers = [
+        "Chrome_travis_ci",
+        "Firefox",
+        //"IE",
+        //"Opera",
+        "PhantomJS"
+    ];
+  }
+
+  config.set(options);
 };

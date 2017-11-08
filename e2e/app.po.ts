@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Angular4FirebaseStoragePage {
+export class ChickenpiAppPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,16 +1,16 @@
-import { Angular4FirebaseStoragePage } from './app.po';
+import { ChickenpiAppPage } from './app.po';
 
-describe('angular4-firebase-storage App', () => {
-  let page: Angular4FirebaseStoragePage;
+describe('chickenpi-app', () => {
+  let page: ChickenpiAppPage;
 
   beforeEach(() => {
-    page = new Angular4FirebaseStoragePage();
+    page = new ChickenpiAppPage();
   });
 
   it('should display welcome message', done => {
     page.navigateTo();
     page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(msg => expect(msg).toEqual('Chickenpi App'))
       .then(done, done.fail);
   });
 });
