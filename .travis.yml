@@ -1,3 +1,4 @@
+dist: trusty
 language: node_js
 
 node_js:
@@ -24,3 +25,12 @@ notifications:
   email:
     on_failure: change
     on_success: change
+	
+addons:
+  sonarcloud:
+    organization: "joergsesterhenn" # the key of the org you chose at step #3
+
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
+  
