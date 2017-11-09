@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetailsUploadComponent } from './details-upload.component';
+import { FileUpload } from '../fileupload'
 
 describe('DetailsUploadComponent', () => {
   let component: DetailsUploadComponent;
@@ -8,6 +9,7 @@ describe('DetailsUploadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FileUpload],
       declarations: [ DetailsUploadComponent ]
     })
     .compileComponents();
