@@ -1,4 +1,14 @@
 <div class="container" style="width:400px">
+
+	<div *ngIf="afAuth.authState | async; let user; else showLogin">
+		<h1>Hello {{ user.displayName }}!</h1>
+		<button (click)="logout()">Logout</button>
+	  </div>
+	  <ng-template #showLogin>
+		<p>Please login.</p>
+		<button (click)="login()">Login with Google</button>
+	  </ng-template>
+
 	<div style="color: black; margin-bottom: 20px">
 		<h1>{{title}}</h1>
 		<h3>{{description}}</h3>
@@ -6,8 +16,7 @@
 
 	<form-upload></form-upload>
 	
-	<br/>
-	<br/>
-	
 	<list-upload></list-upload>
 </div>
+
+

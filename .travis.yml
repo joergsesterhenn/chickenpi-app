@@ -28,8 +28,6 @@ before_script:
 
 script:
   - ng build
-  - ng test --single-run --code-coverage
-  - ng e2e
   - sonar-scanner
 
 after_success:
