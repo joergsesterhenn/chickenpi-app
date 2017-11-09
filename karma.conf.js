@@ -39,11 +39,11 @@ module.exports = function (config) {
         }
     };
     options.browsers = [
-        "Chrome_travis_ci",
-        "Firefox",
+        "Chrome_travis_ci"
+        //"Firefox",
         //"IE",
         //"Opera",
-        "PhantomJS"
+        //"PhantomJS"
     ];
   }
 
