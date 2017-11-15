@@ -21,8 +21,6 @@
 <div class="navbar navbar-inverse navbar-fixed-bottom">
 	<div class="container">
 		<p class="navbar-text pull-left"></p>
-		<ng-template #showLogin>
-			<button class="navbar-btn btn pull-right" (click)="login()">Login</button>
-		</ng-template>
+		<button *ngIf="isLoggedIn" class="navbar-btn btn btn-primary pull-right" (click)="logout()">Logout</button>
 	</div>
 </div>

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGuard } from 'app/providers/authGuard';
 
 @Component({
   selector: 'app-monitor',
   templateUrl: './monitor.component.html',
-  styleUrls: ['./monitor.component.css']
+  styleUrls: ['./monitor.component.css'],
+  providers: [AuthGuard]
 })
 export class MonitorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ag: AuthGuard) { }
 
   ngOnInit() {
   }

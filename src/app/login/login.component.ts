@@ -1,25 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../providers/auth.service';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [AngularFireAuth]
+  providers: [AuthService, AngularFireAuth]
 })
 export class LoginComponent implements OnInit {
-  isCollapsed = true;
-  constructor(public afAuth: AngularFireAuth) {
-  }
+  public loggedIn;
+  public user_displayName;
+  constructor(public authService: AuthService, private router: Router) {
+    this.authService.af.auth.onAuthStateChanged(
+      (auth) => {
+        if (auth == null) {
+          this.loggedIn = false;
+          this.user_displayName = '';
+        } else {
+          this.loggedIn = true;
+          this.user_displayName = auth.displayName;
+        }
+      })
+   }
   login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.authService.loginWithGoogle()
+    this.router.navigate(['']);
   }
   logout() {
-    this.afAuth.auth.signOut();
+    this.authService.logout();
   }
 
   ngOnInit() {
   }
 
 }
+
+
