@@ -32,3 +32,4 @@ notifications:
 addons:
   sonarcloud:
     organization: "joergsesterhenn-github"
+  sauce_connect: true

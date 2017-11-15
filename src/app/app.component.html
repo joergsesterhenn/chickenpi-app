@@ -1,19 +1,28 @@
-<div class="container" style="width:400px">
-
-	<div *ngIf="afAuth.authState | async; let user; else showLogin">
-		<h1>Hello {{ user.displayName }}!</h1>
-		<button (click)="logout()">Logout</button>
-	  </div>
-	  <ng-template #showLogin>
-		<p>Please login.</p>
-		<button (click)="login()">Login with Google</button>
-	  </ng-template>
-
-	<div style="color: black; margin-bottom: 20px">
-		<h1>{{title}}</h1>
-		<h3>{{description}}</h3>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button class="navbar-toggle collapsed" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">{{title}}</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
+			<ul class="nav navbar-nav">
+				<li (click)="isCollapsed = !isCollapsed"><a routerLink="/controller" routerLinkActive="active">controller</a></li>
+				<li (click)="isCollapsed = !isCollapsed"><a routerLink="/viewer" routerLinkActive="active">viewer</a></li>
+				<li (click)="isCollapsed = !isCollapsed"><a routerLink="/monitor" routerLinkActive="active">monitor</a></li>
+			</ul>
+		</div>
 	</div>
-
+</nav>
+<router-outlet></router-outlet>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<p class="navbar-text pull-left"></p>
+		<ng-template #showLogin>
+			<button class="navbar-btn btn pull-right" (click)="login()">Login</button>
+		</ng-template>
+	</div>
 </div>
-
-

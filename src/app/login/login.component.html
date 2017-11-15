@@ -1,0 +1,4 @@
+<div class="container">
+    <img [src]="'assets/img/chickenpi.png'" height="100" class="img-responsive center-block"/> 
+    <button *ngIf="afAuth.authState | async; let user; else showLogin" class="btn" (click)="logout()">Logout</button>
+</div>
