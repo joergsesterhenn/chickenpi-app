@@ -4,19 +4,34 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 120000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
-  capabilities: {
-    'browserName': 'chrome'
-  },
+
+  multiCapabilities: [
+  {
+    'browserName': 'chrome',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_BUILD_NUMBER,
+    'name': 'Shepherd DEV functional',
+    'chromeOptions': {
+      'args': ['--no-sandbox', '--test-type=browser'],
+      'prefs': {
+        'download': {
+          'prompt_for_download': false,
+          'default_directory': '/tmp'
+        }
+      }
+    }
+  }],
+  
   directConnect: true,
   baseUrl: 'http://localhost:5600/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 40000,
     print: function() {}
   },
   onPrepare() {
