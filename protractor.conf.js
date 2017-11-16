@@ -6,9 +6,9 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 exports.config = {
   allScriptsTimeout: 120000,
   specs: [ './e2e/**/*.e2e-spec.ts' ],
-  sauceUser = process.env.SAUCE_USERNAME,
-  sauceKey = process.env.SAUCE_ACCESS_KEY,
-  capabilities = {
+  sauceUser : process.env.SAUCE_USERNAME,
+  sauceKey : process.env.SAUCE_ACCESS_KEY,
+  capabilities : {
     'browserName': 'chrome',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'build': process.env.TRAVIS_BUILD_NUMBER,
