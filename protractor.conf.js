@@ -8,7 +8,6 @@ exports.config = {
   specs: [ './e2e/**/*.e2e-spec.ts' ],
   sauceUser : process.env.SAUCE_USERNAME,
   sauceKey : process.env.SAUCE_ACCESS_KEY,
-  
   multiCapabilities: [{
     'browserName': 'chrome',
     'platform': 'LINUX',
@@ -65,4 +64,3 @@ exports.config = {
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };
-
