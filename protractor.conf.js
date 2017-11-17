@@ -10,17 +10,19 @@ exports.config = {
   sauceKey : process.env.SAUCE_ACCESS_KEY,
 
   multiCapabilities: [{
+    'name': 'Chickenpi App',
     'browserName': 'chrome',
     'platform': 'LINUX',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    'name': 'Chickenpi App',
-    'build' : process.env.TRAVIS_BUILD_NUMBER
+    'sauceBuild': process.env.TRAVIS_BUILD_NUMBER,
+    'tags': [process.env.TRAVIS_BRANCH, process.env.TRAVIS_BUILD_NUMBER, 'e2e']
   },{
+    'name': 'Chickenpi App',
     'browserName': 'chrome',
     'platform': 'WINDOWS',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    'name': 'Chickenpi App',
-    'build' : process.env.TRAVIS_BUILD_NUMBER
+    'sauceBuild': process.env.TRAVIS_BUILD_NUMBER,
+    'tags': [process.env.TRAVIS_BRANCH, process.env.TRAVIS_BUILD_NUMBER, 'e2e']
   }],
   directConnect: false,
   baseUrl: 'http://localhost:5600/',
