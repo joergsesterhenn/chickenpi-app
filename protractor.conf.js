@@ -8,20 +8,19 @@ exports.config = {
   specs: [ './e2e/**/*.e2e-spec.ts' ],
   sauceUser : process.env.SAUCE_USERNAME,
   sauceKey : process.env.SAUCE_ACCESS_KEY,
+  sauceBuild: process.env.TRAVIS_BUILD_NUMBER,
 
   multiCapabilities: [{
     'name': 'Chickenpi App',
     'browserName': 'chrome',
     'platform': 'LINUX',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    'sauceBuild': process.env.TRAVIS_BUILD_NUMBER,
     'tags': [process.env.TRAVIS_BRANCH, process.env.TRAVIS_BUILD_NUMBER, 'e2e']
   },{
     'name': 'Chickenpi App',
     'browserName': 'chrome',
     'platform': 'WINDOWS',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    'sauceBuild': process.env.TRAVIS_BUILD_NUMBER,
     'tags': [process.env.TRAVIS_BRANCH, process.env.TRAVIS_BUILD_NUMBER, 'e2e']
   }],
   directConnect: false,
