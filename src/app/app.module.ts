@@ -15,9 +15,9 @@ import { AutomationComponent } from './automation/automation.component';
 import { LoginComponent } from './login/login.component';
 import { CollapseModule } from 'ngx-bootstrap';
 import { ButtonsModule } from 'ngx-bootstrap';
-import { AuthService } from 'app/providers/auth.service';
+import { AuthService } from './providers/auth.service';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from 'app/providers/authGuard';
+import { AuthGuard } from './providers/authGuard';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent},
