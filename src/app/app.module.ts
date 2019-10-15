@@ -1,12 +1,12 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {AngularFireModule} from 'angularfire2';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
 import {AppComponent} from './app.component';
 
 import {environment} from '../environments/environment';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ControllerComponent } from './controller/controller.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { MonitorComponent } from './monitor/monitor.component';
@@ -42,12 +42,12 @@ const routes: Routes = [
     BrowserModule,
     CollapseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     ButtonsModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [AuthService, AngularFireAuth, AuthGuard],
+  providers: [AuthService, AngularFireAuthModule, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
