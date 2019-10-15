@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthGuard } from 'app/providers/authGuard';
+import { AuthGuard } from '../providers/authGuard';
 
 @Component({
   selector: 'app-controller',
