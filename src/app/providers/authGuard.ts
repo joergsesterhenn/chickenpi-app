@@ -1,25 +1,27 @@
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/take';
+import { tap, map, take } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from 'app/providers/auth.service';
+import { AuthService } from './auth.service';
+import { NgZone } from '@angular/core';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private zone: NgZone) {
+    this.zone = zone;
+  }
 
   canActivate(): Observable<boolean> {
-    return this.auth.af.authState
-      .take(1)
-      .map(authState => !!authState)
-      .do(authenticated => {
-        if (!authenticated) {
-            this.router.navigate(['/login']);
+    return this.auth.afAuth.authState.pipe(
+      take(1),
+      map(authState => !!authState),
+      tap(loggedIn => {
+        if (!loggedIn) {
+          this.zone.run(() => console.log('access denied'));
+          this.router.navigate(['/login']);
         }
-      });
+      }));
   }
 }
 

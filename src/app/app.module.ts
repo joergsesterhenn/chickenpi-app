@@ -1,12 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
-import {AppComponent} from './app.component';
-
-import {environment} from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 import { ControllerComponent } from './controller/controller.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { MonitorComponent } from './monitor/monitor.component';
@@ -16,8 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { CollapseModule } from 'ngx-bootstrap';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { AuthService } from './providers/auth.service';
-import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './providers/authGuard';
+import { Routes, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '',  component: LoginComponent},
@@ -41,13 +40,15 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     CollapseModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ButtonsModule.forRoot(),
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [AuthService, AngularFireAuthModule, AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
