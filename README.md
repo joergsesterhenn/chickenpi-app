@@ -1,6 +1,9 @@
 <img align="right" alt="chickenpi logo" src="https://github.com/joergsesterhenn/chickenpi/raw/master/chickenpi.png" height="200">
 
-# [chickenpi-app](https://chickenpi-server.firebaseapp.com/) [![Build Status](https://travis-ci.org/joergsesterhenn/chickenpi-app.svg?branch=master)](https://travis-ci.org/joergsesterhenn/chickenpi-app) <a href="https://sonarcloud.io/dashboard?id=de.chickenpi:chickenpi-app"><img alt="quality gate status" src="https://sonarcloud.io/api/badges/gate?key=de.chickenpi:chickenpi-app"/></a> <a href="https://david-dm.org/joergsesterhenn/chickenpi-app"> <img title="dependencies status" src="https://david-dm.org/joergsesterhenn/chickenpi-app/status.svg"/></a><a href="https://david-dm.org/joergsesterhenn/chickenpi-app?type=dev" title="devDependencies status"><img src="https://david-dm.org/joergsesterhenn/chickenpi-app/dev-status.svg"/></a> [![Sauce Test Status](https://saucelabs.com/buildstatus/joergsesterhenn)](https://saucelabs.com/u/joergsesterhenn)
+# [chickenpi-app](https://chickenpi-server.firebaseapp.com/) [![Build Status](https://travis-ci.org/joergsesterhenn/chickenpi-app.svg?branch=master)](https://travis-ci.org/joergsesterhenn/chickenpi-app) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=de.chickenpi:chickenpi-app&metric=alert_status)](https://sonarcloud.io/dashboard?id=de.chickenpi:chickenpi-app)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=de.chickenpi:chickenpi-app&metric=coverage)](https://sonarcloud.io/dashboard?id=de.chickenpi:chickenpi-app)
+<a href="https://david-dm.org/joergsesterhenn/chickenpi-app"> <img title="dependencies status" src="https://david-dm.org/joergsesterhenn/chickenpi-app/status.svg"/></a><a href="https://david-dm.org/joergsesterhenn/chickenpi-app?type=dev" title="devDependencies status"><img src="https://david-dm.org/joergsesterhenn/chickenpi-app/dev-status.svg"/></a> [![Sauce Test Status](https://saucelabs.com/buildstatus/joergsesterhenn)](https://saucelabs.com/u/joergsesterhenn)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/joergsesterhenn.svg)](https://saucelabs.com/u/joergsesterhenn)
 
