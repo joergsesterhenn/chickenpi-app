@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   public loggedIn;
   public user_displayName;
   constructor(public authService: AuthService, private router: Router) {
-    this.authService.af.auth.onAuthStateChanged(
+    this.authService.afAuth.auth.onAuthStateChanged(
       (auth) => {
         if (auth == null) {
           this.loggedIn = false;

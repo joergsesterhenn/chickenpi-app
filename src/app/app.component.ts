@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-// import { Observable } from 'rxjs/Observable';
 import { AuthService } from './providers/auth.service';
-import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-import { AuthGuard } from 'app/providers/authGuard';
+import { AuthGuard } from './providers/authGuard';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,24 +14,15 @@ export class AppComponent {
   title = 'Chickenpi App';
   description = 'Frontend to chickenpi coop management.';
   isCollapsed = true;
-  private isLoggedIn: Boolean;
-  private user_displayName: String;
-  private user_email: String;
 
-  constructor(public authService: AuthService, private router: Router) {
-  this.authService.af.auth.onAuthStateChanged(
+  constructor(public authService: AuthService, private router: Router, private zone: NgZone) {
+  this.authService.afAuth.auth.onAuthStateChanged(
     (auth) => {
       if (auth == null) {
-        console.log('Logged out');
-        this.isLoggedIn = false;
-        this.user_displayName = '';
-        this.user_email = '';
+        zone.run(() => console.log('Logged out'));
         this.router.navigate(['login']);
       } else {
-        this.isLoggedIn = true;
-        this.user_displayName = auth.displayName;
-        this.user_email = auth.email;
-        console.log('Logged in');
+        zone.run(() => console.log('Logged in'));
         this.router.navigate(['']);
       }
     })
