@@ -11,8 +11,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providers: [AuthService, AngularFireAuth]
 })
 export class LoginComponent implements OnInit {
-  public loggedIn;
-  public user_displayName;
+  public loggedIn: boolean;
+  public user_displayName: string;
   constructor(public authService: AuthService, private router: Router) {
     this.authService.afAuth.auth.onAuthStateChanged(
       (auth) => {
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       })
    }
   login() {
-    this.authService.loginWithGoogle()
+    this.authService.loginWithGoogle();
     this.router.navigate(['']);
   }
   logout() {

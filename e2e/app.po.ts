@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, element, by } from 'protractor';
 
 export class ChickenpiAppPage {
   navigateTo() {
@@ -6,6 +6,7 @@ export class ChickenpiAppPage {
   }
 
   getParagraphText() {
-    return element(by.css('a.navbar-brand')).getText();
+    const foo = element(by.id('title'));
+    return foo.getText();
   }
 }

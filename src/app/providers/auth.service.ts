@@ -9,7 +9,7 @@ export class AuthService {
 
   async loginWithGoogle() {
     const provider = new auth.GoogleAuthProvider();
-    const credentials = this.afAuth.auth.signInWithPopup(provider);
+    this.afAuth.auth.signInWithPopup(provider);
   }
 
   async logout() {
