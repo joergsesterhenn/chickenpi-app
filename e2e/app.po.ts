@@ -6,7 +6,6 @@ export class ChickenpiAppPage {
   }
 
   getParagraphText() {
-    const foo = element(by.id('title'));
-    return foo.getText();
+    return element(by.id('title')).getText();
   }
 }
