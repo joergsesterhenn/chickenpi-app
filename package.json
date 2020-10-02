@@ -23,7 +23,7 @@
     "@angular/router": "8.2.10",
     "bootstrap": "^4.3.1",
     "core-js": "^3.2.1",
-    "firebase": "6.6.2",
+    "firebase": "7.22.0",
     "jquery": "^3.4.1",
     "ngx-bootstrap": "5.3.0",
     "poper": "^0.1.1",
