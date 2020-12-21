@@ -1,11 +1,11 @@
-import { browser, element, by } from 'protractor';
+import { browser, element, by } from "protractor";
 
 export class ChickenpiAppPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get("/");
   }
 
   getParagraphText() {
-    return element(by.id('title')).getText();
+    return element(by.id("title")).getText();
   }
 }

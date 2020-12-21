@@ -2,46 +2,47 @@
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
 module.exports = function (config) {
-  var options ={
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+  var options = {
+    basePath: "",
+    frameworks: ["jasmine", "@angular-devkit/build-angular"],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require("karma-jasmine"),
+      require("karma-chrome-launcher"),
+      require("karma-jasmine-html-reporter"),
+      require("karma-coverage-istanbul-reporter"),
+      require("@angular-devkit/build-angular/plugins/karma"),
     ],
-    client:{
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    client: {
+      clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
-     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
-      fixWebpackSourcePaths: true
+    coverageIstanbulReporter: {
+      dir: require("path").join(__dirname, "coverage"),
+      reports: ["html", "lcovonly"],
+      fixWebpackSourcePaths: true,
     },
-    
-    reporters: ['progress', 'kjhtml'],
+
+    reporters: ["progress", "kjhtml"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
-  }
+    browsers: ["Chrome"],
+    singleRun: false,
+  };
 
   if (process.env.TRAVIS) {
     options.customLaunchers = {
-        Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-        }
+      Chrome_travis_ci: {
+        base: "Chrome",
+        flags: ["--no-sandbox"],
+      },
     };
     options.browsers = [
-        "Chrome_travis_ci"
-        //"Firefox",
-        //"IE",
-        //"Opera",
-        //"PhantomJS"
+      "Chrome_travis_ci",
+      //"Firefox",
+      //"IE",
+      //"Opera",
+      //"PhantomJS"
     ];
   }
 
