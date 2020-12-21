@@ -5,7 +5,11 @@ name = "javascript"
 enabled = true
 
   [analyzers.meta]
-  plugins = ["angular"]
   environment = ["browser"]
+  plugins = ["angular"]
   style_guide = "standard"
   dialect = "typescript"
+
+[[transformers]]
+name = "prettier"
+enabled = true
