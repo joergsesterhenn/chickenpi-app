@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthGuard } from '../providers/authGuard';
+import { Component, OnInit } from "@angular/core";
+import { AuthGuard } from "../providers/authGuard";
 
 @Component({
-  selector: 'app-controller',
-  templateUrl: './controller.component.html',
-  styleUrls: ['./controller.component.css'],
-  providers:[AuthGuard]
+  selector: "app-controller",
+  templateUrl: "./controller.component.html",
+  styleUrls: ["./controller.component.css"],
+  providers: [AuthGuard],
 })
 export class ControllerComponent implements OnInit {
+  constructor(public ag: AuthGuard) {}
 
-  constructor(public ag: AuthGuard) { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
