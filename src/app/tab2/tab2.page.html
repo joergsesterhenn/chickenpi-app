@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Sheduler
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sheduler</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form id="sheduler-form1">
+    <ion-item id="sheduler-range1">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range1">
+        <ion-label slot="start" range-left>
+          Always
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range2">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true"  name="range2">
+        <ion-label slot="start" range-left>
+          Mo
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range3">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range3">
+        <ion-label slot="start" range-left>
+          Tu
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range4">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range4">
+        <ion-label slot="start" range-left>
+          We
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range5">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range5">
+        <ion-label slot="start" range-left>
+          Th
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range6">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range6">
+        <ion-label slot="start" range-left>
+          Fr
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range7">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range7">
+        <ion-label slot="start" range-left>
+          Sa
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="sheduler-range8">
+      <ion-range min="0" max="23" step="0.5" snaps="true" pin="true" color="secondary" [(ngModel)]="knobValues" dualKnobs="true" name="range8">
+        <ion-label slot="start" range-left>
+          Su
+        </ion-label>
+      </ion-range>
+    </ion-item>
+  </form>
+</ion-content>

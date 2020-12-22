@@ -1,0 +1,7 @@
+{
+  "name": "chickenpi-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

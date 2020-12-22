@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
+
+
+import { canActivate } from '@angular/fire/auth-guard';
+import { AppComponent } from './app.component';
+
+export const routes: Routes = [
+    { path: '',             component: AppComponent },
+    { path: 'login',        component: login.page,    ...canActivate(redirectLoggedInToItems) },
+    { path: 'tabs',         component: TabsComponent, ...canActivate(redirectUnauthorizedToLogin) },
+];
+
+/*const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule), canActivate: [AngularFireAuthGuard]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  }
+];
+*/
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}

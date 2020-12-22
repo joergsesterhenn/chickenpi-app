@@ -1,58 +1,38 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { AppComponent } from "./app.component";
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { environment } from "../environments/environment";
-import { ControllerComponent } from "./controller/controller.component";
-import { ViewerComponent } from "./viewer/viewer.component";
-import { MonitorComponent } from "./monitor/monitor.component";
-import { ConditionsComponent } from "./conditions/conditions.component";
-import { AutomationComponent } from "./automation/automation.component";
-import { LoginComponent } from "./login/login.component";
-import { CollapseModule } from "ngx-bootstrap";
-import { ButtonsModule } from "ngx-bootstrap";
-import { AuthService } from "./providers/auth.service";
-import { AuthGuard } from "./providers/authGuard";
-import { Routes, RouterModule } from "@angular/router";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
 
-const routes: Routes = [
-  { path: "", component: LoginComponent },
-  { path: "login", component: LoginComponent },
-  {
-    path: "controller",
-    component: ControllerComponent,
-    canActivate: [AuthGuard],
-  },
-  { path: "viewer", component: ViewerComponent, canActivate: [AuthGuard] },
-  { path: "monitor", component: MonitorComponent, canActivate: [AuthGuard] },
-  { path: "**", component: LoginComponent },
-];
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAuPHeKnjzhn-oCefJqm7zon1mnhj0ZrHQ',
+  authDomain: 'chickenpi-server.firebaseapp.com',
+  databaseURL: 'https://chickenpi-server.firebaseio.com',
+  storageBucket: 'chickenpi-server.appspot.com',
+  messagingSenderId: '557371977224'
+};
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ControllerComponent,
-    ViewerComponent,
-    MonitorComponent,
-    ConditionsComponent,
-    AutomationComponent,
-    LoginComponent,
+  declarations: [AppComponent],
+  entryComponents: [],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,   AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    AngularFireDatabase,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  imports: [
-    BrowserModule,
-    CollapseModule,
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    ButtonsModule.forRoot(),
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-  ],
-  exports: [RouterModule],
-  providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
